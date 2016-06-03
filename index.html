@@ -1,6 +1,7 @@
 <!DOCTYPE html>
     
 <html  ng-app='introAng'>
+    
     <head>
         <title>JS 4.1 Intro to Angular</title>
         <!-- jQuerey -->
@@ -13,38 +14,35 @@
         <script rel='javascript' src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular.js'></script>
     </head>
     
-    <body>
+    <body ng-controller='introController as introCtrl'>
         
-        <div ng-controller='introController as introCtrl'>
-            
+        <div ng-repeat="content in introCtrl.pageContent">
             <h1 class="jumbotron text-center">{{introCtrl.title}}</h1>
             
             <button class='btn btn-default blue'  ng-click='introCtrl.showH1 = !(introCtrl.showH1)' type='button'>Toggle Switch</button>
             
-                <h1 ng-hide='introCtrl.showH1'>This is the headline</h1>
+                <h1 ng-hide='introCtrl.showH1'>{{content.h1}}</h1>
             
             <hr>
             
             <button class='btn btn-default green'  ng-click='introCtrl.showUl = !(introCtrl.showUl)' type='button'>Toggle Switch</button>
             
                 <ul ng-hide='introCtrl.showUl'>
-                    <li>Item 1</li>
-                    <li>Item 2</li>
-                    <li>Item 3</li>
+                    <li>{{content.li1}}</li>
+                    <li>{{content.li2}}</li>
+                    <li>{{content.li3}}</li>
                 </ul>
                 
             <hr>
             
-            <h2>Paragraph</h2>
-                <p>This is a paragraph that turns pink when the mouse runs over it.</p>
-            <a href='#'>Link!</a>
+            <h2>{{content.h2}}</h2>
+                <p ng-style='style' ng-mouseover="style={'color':'salmon'}">{{content.p}}</p>
+                <a href='#'>Link!</a>
         </div>
-            
 
-        <!-- Add ng-controller directive to elements it relates to -->
-        
-        
         <!-- Personal JS -->
         <script rel='javascript' src='main.js'></script>
+	    <script type="text/javascript" src="main.introController.js"></script>
+    	<script type="text/javascript" src="main.layoutFactory.js"></script>
     </body>
 </html>
