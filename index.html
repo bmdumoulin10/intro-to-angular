@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+    
+<html  ng-app='introAng'>
+    <head>
+        <title>JS 4.1 Intro to Angular</title>
+        <!-- jQuerey -->
+        <script rel='javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js'></script>
+        <!-- Bootstrap -->
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.css'></script>
+        <!-- Personal CSS -->
+        <link rel='stylesheet' href='main.css'></script>   
+        <!-- Angular -->
+        <script rel='javascript' src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular.js'></script>
+    </head>
+    
+    <body>
+        
+        <div ng-controller='introController as introCtrl'>
+            
+            <h1 class="jumbotron text-center">{{introCtrl.title}}</h1>
+            
+            <button class='btn btn-default blue'  ng-click='introCtrl.showH1 = !(introCtrl.showH1)' type='button'>Toggle Switch</button>
+            
+                <h1 ng-hide='introCtrl.showH1'>This is the headline</h1>
+            
+            <hr>
+            
+            <button class='btn btn-default green'  ng-click='introCtrl.showUl = !(introCtrl.showUl)' type='button'>Toggle Switch</button>
+            
+                <ul ng-hide='introCtrl.showUl'>
+                    <li>Item 1</li>
+                    <li>Item 2</li>
+                    <li>Item 3</li>
+                </ul>
+                
+            <hr>
+            
+            <h2>Paragraph</h2>
+                <p>This is a paragraph that turns pink when the mouse runs over it.</p>
+            <a href='#'>Link!</a>
+        </div>
+            
+
+        <!-- Add ng-controller directive to elements it relates to -->
+        
+        
+        <!-- Personal JS -->
+        <script rel='javascript' src='main.js'></script>
+    </body>
+</html>
